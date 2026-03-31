@@ -5392,9 +5392,24 @@ sshchat:
   type: A
   value: 150.136.142.44
 stasis: # alexp@hackclub.com
-- ttl: 300
-  type: CNAME
-  value: b.selfhosted.hackclub.com.
+- ttl: 3600
+  type: MX
+  values:
+  - exchange: aspmx.l.google.com.
+    preference: 1
+  - exchange: alt1.aspmx.l.google.com.
+    preference: 5
+  - exchange: alt2.aspmx.l.google.com.
+    preference: 5
+  - exchange: alt3.aspmx.l.google.com.
+    preference: 10
+  - exchange: alt4.aspmx.l.google.com.
+    preference: 10
+- ttl: 3600
+  type: TXT
+  values:
+  - google-site-verification=vA4LKdKdGqrSKrEToVWGkpJGZLvStp817KuTrgof-7Q
+  - v=spf1 include:_spf.google.com ~all
 stasis-staging: # alexp@hackclub.com
 - ttl: 300
   type: CNAME
